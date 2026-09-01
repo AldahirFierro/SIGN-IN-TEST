@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body{
+                font-family: 'Segoe UI', Arial, sans-serif;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                min-height: 100vh;
+                padding: 40px;
+                padding-right: 8vw;
+                box-sizing: border-box;
+            }
+
+            body::after{
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8) 0%, transparent 50%, rgba(0, 0, 0, 0.8) 100%);
+                z-index: -1;
+                pointer-events: none; /*evota que interfiera con los clics en la pantalla */
+
+            }
+
+            #video-fondo{
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                object-fit: cover;
+                z-index: -2;
+            }
+
+            .caja-principal{
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                
+
+               width: 80%;
+               max-width: 750px;
+               min-height: 400px;
+               overflow: hidden;
+
+            }
+            
+            .caja-izquierda{
+                background: linear-gradient(to bottom, rgba(117, 0, 0, 0.253) 0%, transparent 50%, rgba(117, 0, 0, 0.253) 100%);
+                background-color: rgb(255, 74, 98);
+                justify-content: center;
+                align-content: center;
+            }
+            
+            .contenido-texto{
+                padding: 40px;
+            }
+
+            .caja-derecha{
+                background: linear-gradient(to bottom, rgba(0, 0, 0, 0.253) 0%, transparent 50%, rgba(0,0,0,0.253) 100%);
+                background-color: rgb(255, 255, 255);
+                justify-content: center;
+                align-content: center;
+
+            }
+
+            .texto-ingreso{
+                padding:25%;
+            }
+
+            #hola{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                display:block;
+                width: 100%;
+                text-align: left;
+                font-size: 40px;
+                margin-left: 40px ;
+                margin-bottom: 5px;
+                color: #fdfdfd;
+                text-shadow: 1px 1px 10px #00000079;
+                pointer-events: none;
+                
+            }
+
+            #bienvenido{
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                color: #fdfdfd;
+                display: block;
+                width: 100%;
+                text-align: center;
+                font-size: 25px;
+                
+                text-shadow: 1px 1px 10px #00000079;
+                pointer-events: none;
+
+            }
+
+            .caja-derecha input{
+                border: none;
+                border-radius: 8px;
+                color: #fdfdfd;
+                background-color: rgb(202, 202, 202);
+
+                width: 110%;
+                padding: 5px;
+                box-sizing: border-box;
+                font-size: 20px;
+                outline: none;
+                
+                margin-bottom: 15px;
+            }
+            
+            .caja-derecha input::placeholder{
+                color: rgb(255, 254, 254);
+                -webkit-text-stroke: 1px #20151528;
+            }
+
+            .caja-derecha label{
+                font-size: 22px;
+                font-family: 'LEMON MILK', Courier, monospace
+            }
+
+            .boton-ingresar{
+                background-color:rgb(255, 74, 98);
+                color: aliceblue;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                font-size: 18px;
+                
+                border: none;
+                border-radius: 8px;
+                width: 100%;
+                padding: 10px;
+                margin-top: 15px;
+                cursor: pointer;
+                transition: background-color 0.3s ease, transform 0.2s ease;
+                box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+                text-shadow: 1px 1px 1px #000000;
+            }
+
+            .boton-ingresar:hover{
+                background-color: rgb(235, 54, 78);
+            }
+
+            .boton-ingresar:active{
+                transform: scale(0.8);
+            }
+
+        </style>
+    </head>
+<body>
+
+    <video autoplay loop muted playsinline id="video-fondo">
+        <source src="https://aldahirfierro.github.io/SIGN-IN-TEST/Yourname.mp4" type="video/mp4">
+        tu navegador no soporta videos.
+    </video>
+
+    <div class="caja-principal">
+        <div class="caja-izquierda">
+            <div class="contenido-texto">
+             <span id="hola">¡HOLA!</span>
+             <span id="bienvenido">BIENVENIDO DE VUELTA </span>
+            </div>
+        </div>
+
+        <div class="caja-derecha">
+            <div class="texto-ingreso">
+                <label for="usuario-tag">USUARIO</label>
+                <input id="usuario-tag" name="usuario-tag" type="text" placeholder="Ingresa tu usuario">
+                <label for="password-tag">CONTRASEÑA</label>
+                <input  id="password-tag" name="password-tag" type="password" placeholder="Ingresa tu contraseña">
+                
+                <button type="submit" class="boton-ingresar" id="boton-ingresar" name="boton-ingresar">INICAR SESION</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
